@@ -12,7 +12,7 @@ export class HeroesComponent {
 
   heroes: Hero[] = [];
 
-  constructor( private heroService: HeroService, private messageService: MessageService) {}
+  constructor( private heroService: HeroService ) {}
   
   ngOnInit(): void {
     this.getHeroes();
