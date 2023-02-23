@@ -1,4 +1,7 @@
 /* DashboardComponent's private CSS styles */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 h2 {
     text-align: center;
