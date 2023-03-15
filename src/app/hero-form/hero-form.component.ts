@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyHero } from '../hero';
 
 @Component({
   selector: 'app-hero-form',
@@ -7,4 +8,36 @@ import { Component } from '@angular/core';
 })
 export class HeroFormComponent {
 
+  powers = ['Really Smart', 'Super Flexible',
+            'Super Hot', 'Weather Changer'];
+
+  model = new MyHero(18, 'Dr. IQ', this.powers[0], 'Chuck Overstreet');
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
+  newHero() {
+    this.model = new MyHero(42, '', '');
+  }
+
+  skyDog(): MyHero {
+    const myHero =  new MyHero(42, 'SkyDog',
+                       'Fetch any object at any distance',
+                       'Leslie Rollover');
+  
+                       console.log('My hero is called ' + myHero.name); // "My hero is called SkyDog"
+    return myHero;
+  }
+
+  //////// NOT SHOWN IN DOCS ////////
+
+  // Reveal in html:
+  //   Name via form.controls = {{showFormControls(heroForm)}}
+  showFormControls(form: any) {
+    return form && form.controls.name &&
+    form.controls.name.value; // Dr. IQ
+  }
+
+  /////////////////////////////
 }
