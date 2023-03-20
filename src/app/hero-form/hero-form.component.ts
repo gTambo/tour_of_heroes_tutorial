@@ -15,7 +15,9 @@ export class HeroFormComponent {
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; alert(`you clicked submit. Your new hero is #${this.model.id} ${this.model.name}, ${this.model.alterEgo}, ${this.model.power}`) }
+  onSubmit() { this.submitted = true; 
+    // alert(`you clicked submit. Your new hero is #${this.model.id} ${this.model.name}, ${this.model.alterEgo}, ${this.model.power}`) 
+  }
 
   newHero() {
     this.model = new MyHero(42, '', '');
