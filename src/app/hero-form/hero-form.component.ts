@@ -8,14 +8,14 @@ import { MyHero } from '../hero';
 })
 export class HeroFormComponent {
 
-  powers = ['Really Smart', 'Super Flexible',
+  powers = ['', 'Really Smart', 'Super Flexible',
             'Super Hot', 'Weather Changer'];
 
   model = new MyHero(18, 'Dr. IQ', this.powers[0], 'Chuck Overstreet');
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() { this.submitted = true; alert(`you clicked submit. Your new hero is #${this.model.id} ${this.model.name}, ${this.model.alterEgo}, ${this.model.power}`) }
 
   newHero() {
     this.model = new MyHero(42, '', '');
